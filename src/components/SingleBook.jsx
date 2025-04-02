@@ -20,6 +20,11 @@ const styles = {
 
 class SingleBook extends Component {
 
+    state = {
+        selected: true,
+    }
+
+
     render(){
 
         //const [selected, setSelected] = useState(false)
@@ -33,11 +38,15 @@ class SingleBook extends Component {
     
                     } >
                         <Card style={styles.card}>
-                            <Card.Img variant="top" src={this.props.img} className="w-100" style={styles.cardImage} />
+                            <Card.Img variant="top" src={this.props.book.img} className="w-100" style={styles.cardImage} onClick={() => {
+                                this.setState({
+                                    selected: !this.state.selected,
+                                })
+                            }} />
                             <Card.Body style={styles.cardBody} className="d-flex flex-column align-items-center">
                                 <Card.Title className="flex-grow-1">{this.props.title}</Card.Title>
-                                <Card.Text>{this.props.category}</Card.Text>
-                                <Card.Text>{this.props.price}€</Card.Text>
+                                <Card.Text>{this.props.book.category}</Card.Text>
+                                <Card.Text>{this.props.book.price}€</Card.Text>
                                 <Button variant="dark" className="w-25" onClick={() => {this.setState({selected: false})}}>Buy me</Button>
                             </Card.Body>
                         </Card>

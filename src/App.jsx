@@ -2,11 +2,9 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css'
 import NavbarCustom from './components/NavbarCustom'
 import MyFooter from './components/MyFooter'
-// import AllTheBooks from './components/AllTheBooks'
 import Welcome from './components/Welcome'
-import BookList from './components/BookList'
 import libriFantasy from './books/fantasy.json'
-import SingleBook from './components/SingleBook'
+import BookListDue from './components/BookListDue'
 
 
 function App() {
@@ -19,10 +17,9 @@ function App() {
           
           <Welcome />
 
-          <SingleBook img={libriFantasy[7].img} title={libriFantasy[7].title} category={libriFantasy[7].category} price={libriFantasy[7].price} />
 
-          <BookList arrayOfBooks={libriFantasy} />
-          {/* <AllTheBooks /> */}
+          <BookListDue arrayOfBooks={libriFantasy} />
+
 
         </main>
 
