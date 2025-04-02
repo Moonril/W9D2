@@ -6,7 +6,7 @@ import Welcome from "./Welcome"
 
 const styles = {
     card: {
-        backgroundColor: '#B7E0F2',
+        backgroundColor: '#4fbd8c',
         padding: '1rem'
     },
     cardImage: {

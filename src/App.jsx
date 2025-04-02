@@ -11,7 +11,7 @@ function App() {
     <>
         <NavbarCustom tema="dark"/>
 
-        <main className='flex-grow-1 bg-dark'>
+        <main className='flex-grow-1'>
           
           
           <AllTheBooks />
