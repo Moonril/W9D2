@@ -51,7 +51,9 @@ class CommentArea extends Component {
     render(){
         return(
             <div>
-                {/* <Commentlist getArrayOfComments={this.state.comments} /> */}
+
+                <Commentlist arrayOfComments={this.state.comments} />
+
                 {/* <AddComment /> */}
             {/* aggiungere qui commentlist e addcomment */}
             </div>

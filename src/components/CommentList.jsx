@@ -13,8 +13,8 @@ class Commentlist extends Component {
 
                 {
                     this.props.arrayOfComments.map((com) => (
-                        <div key={com.elementId}>
-                            <SingleComment />
+                        <div key={com._id}>
+                            <ListGroup.Item>{com.comment}, {com.rate}/5</ListGroup.Item>
                         </div>
 
                     ))
