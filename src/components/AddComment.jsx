@@ -21,3 +21,6 @@ class AddComment extends Component {
 }
 
 export default AddComment
+
+
+// add comment che permette di aggiungere un comment, contiene un form che fa una richiesta post

@@ -50,7 +50,7 @@ class SingleBook extends Component {
                                 <Button variant="dark" className="w-25" onClick={() => {this.setState({selected: false})}}>Buy me</Button>
                             </Card.Body>
                             {this.state.selected && (
-                                <CommentArea />
+                                <CommentArea asin={this.props.book.asin} />
                             )}
                         </Card>
                 </Col>
