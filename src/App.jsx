@@ -1,4 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap-icons/font/bootstrap-icons.min.css'
 import './App.css'
 import NavbarCustom from './components/NavbarCustom'
 import MyFooter from './components/MyFooter'

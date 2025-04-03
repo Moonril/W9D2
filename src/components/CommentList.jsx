@@ -4,7 +4,7 @@ import SingleComment from "./SingleComment";
 
 
 
-class Commentlist extends Component {
+class CommentList extends Component {
 
 
     render(){
@@ -13,9 +13,9 @@ class Commentlist extends Component {
 
                 {
                     this.props.arrayOfComments.map((com) => (
-                        <div key={com._id}>
-                            <ListGroup.Item>{com.comment}, {com.rate}/5</ListGroup.Item>
-                        </div>
+                        
+                        <SingleComment key={com._id} com={com} />
+                           
 
                     ))
                 }
@@ -24,8 +24,6 @@ class Commentlist extends Component {
     }
 }
 
-export default Commentlist
+export default CommentList
 
 
-// comment list che mostrerà la lista di commenti, array di recensioni verrà passato da comment area come prop
-//

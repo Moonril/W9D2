@@ -1,5 +1,4 @@
-import { Container, Row, Col, Card, Button } from "react-bootstrap"
-import libriFantasy from '../books/fantasy.json'
+import { Col, Card, Button } from "react-bootstrap"
 import { Component } from "react"
 import CommentArea from "./CommentArea"
 
