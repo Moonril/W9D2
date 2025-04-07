@@ -21,13 +21,12 @@ const styles = {
 
 class SingleBook extends Component {
 
-    state = {
+    /* state = {
         selected: false,
     }
-
-    getAsin = () => {
-        
-    }
+        rimosso perchè non ci serve più, adesso 
+ */
+    
 
     render(){
 
@@ -41,19 +40,20 @@ class SingleBook extends Component {
                         <Card style={styles.card}>
                             <Card.Img variant="top" src={this.props.book.img} className="w-100" style={{
                                 ...styles.cardImage,
-                                border: this.state.selected ? '3px solid red' : 'none'
+                                border: this.props.asinCorrente ? '3px solid red' : 'none'
                             }} onClick={() => {
-                                this.setState({
+                                /* this.setState({
                                     selected: !this.state.selected,
-                                })
+                                }) */
                                 // al click qua, io devo salvare l'asin in booklist
                                 this.props.cambiaValore(this.props.book.asin)
+                                console.log('seleziono un libro')
                             }} />
                             <Card.Body style={styles.cardBody} className="d-flex flex-column align-items-center">
                                 <Card.Title className="flex-grow-1">{this.props.book.title}</Card.Title>
                                 <Card.Text>{this.props.book.category}</Card.Text>
                                 <Card.Text>{this.props.book.price}€</Card.Text>
-                                <Button variant="dark" className="w-25" onClick={() => {this.setState({selected: false})}}>Buy me</Button>
+                                <Button variant="dark" className="w-25">Buy me</Button>
                             </Card.Body>
                         </Card>
                 </Col>

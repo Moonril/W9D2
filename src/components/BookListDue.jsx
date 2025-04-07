@@ -30,16 +30,16 @@ class BookListDue extends Component {
         selectedBookAsin: '',
     }
 
-    getAsin = (nuovoValore) => {
-        if(this.state.selectedBookAsin.length === 0 ){
+
+
+    getAsin = (nuovoAsin) => {
+        //serve a ricevere l'asin del libro selzionato e a salvarlo nello state
+        // volevo aggiungere un if che resettasse l'asin quando deseleziono il libro ma fa cose strane
+        
             this.setState({
-                selectedBookAsin: nuovoValore,
+                selectedBookAsin: nuovoAsin,
             })
-        } else {
-            this.setState({
-                selectedBookAsin: '',
-            })
-        }
+
     }
 
  render(){
@@ -78,22 +78,22 @@ class BookListDue extends Component {
                                 }
                                 
                             }).map((Libro) => {
-                                return <SingleBook book={Libro} key={Libro.asin} cambiaValore={this.getAsin} /> 
+                                return <SingleBook book={Libro} key={Libro.asin} cambiaValore={this.getAsin} asinCorrente={this.state.selectedBookAsin} /> 
                             })
                         }
     
                         </Row>
                     </Col>
-                    { this.state.selectedBookAsin.length !== 0 && (
                     <Col md={4}>
+                    { this.state.selectedBookAsin.length !== 0 && (
 
                         <CommentArea valore={this.state.selectedBookAsin} />
 
-                    </Col>
-
+                        
                     )
-
-                    }
+                    
+                }
+                </Col>
                    
                  </Row>
 
