@@ -3,6 +3,7 @@ import { Container, Row, Col, Form, Button } from "react-bootstrap"
 import libriFantasy from '../books/fantasy.json'
 import SingleBook from "./SingleBook"
 import { Component } from "react"
+import CommentArea from "./CommentArea"
 
 
 
@@ -26,6 +27,19 @@ class BookListDue extends Component {
 
     state = {
         search: '',
+        selectedBookAsin: '',
+    }
+
+    getAsin = (nuovoValore) => {
+        if(this.state.selectedBookAsin.length === 0 ){
+            this.setState({
+                selectedBookAsin: nuovoValore,
+            })
+        } else {
+            this.setState({
+                selectedBookAsin: '',
+            })
+        }
     }
 
  render(){
@@ -48,25 +62,41 @@ class BookListDue extends Component {
                  </Row>
              <h1 className="text-light p-5">Fantasy Books!</h1>
                  <Row className="justify-content-center g-3">  
+                    <Col md={8}>
+                    <Row>
+
                                        
     
                      {
                          this.props.arrayOfBooks.filter((libro) => {
-
-
-                            if(libro.title.toLowerCase().includes(this.state.search)){
-                                return true
-                            } else {
-                                return false
-                            }
-
-                         }).map((Libro) => {
-                             return <SingleBook book={Libro} key={Libro.asin} />
-                         })
-                     }
+                             
+                             
+                             if(libro.title.toLowerCase().includes(this.state.search)){
+                                 return true
+                                } else {
+                                    return false
+                                }
+                                
+                            }).map((Libro) => {
+                                return <SingleBook book={Libro} key={Libro.asin} cambiaValore={this.getAsin} /> 
+                            })
+                        }
     
+                        </Row>
+                    </Col>
+                    { this.state.selectedBookAsin.length !== 0 && (
+                    <Col md={4}>
+
+                        <CommentArea valore={this.state.selectedBookAsin} />
+
+                    </Col>
+
+                    )
+
+                    }
                    
                  </Row>
+
              </Container>
     
      )

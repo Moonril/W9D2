@@ -20,7 +20,7 @@ class CommentArea extends Component {
     // URL + book.asin?
 
     getArrayOfComments = () => {
-        fetch(URL + this.props.asin, {
+        fetch(URL + this.props.valore, {
             headers: {
                 "Authorization": APIKey
             }
@@ -54,6 +54,12 @@ class CommentArea extends Component {
 
         this.getArrayOfComments()
     }
+
+    componentDidUpdate = (prevProps) => {
+        if(this.props.valore !== prevProps.valore) {
+            this.getArrayOfComments()
+        }
+    } 
     
     
     render(){
@@ -86,7 +92,7 @@ class CommentArea extends Component {
 
                 <CommentList arrayOfComments={this.state.comments} />
 
-                <AddComment asin={this.props.asin} />
+                <AddComment asin={this.props.valore} />
 
             </div>
         )
